@@ -1,61 +1,128 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 
-<html lang='en'>
+<html>
 
-  <head>
-      <h1>Adi Singh</h1>
-    <title>Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<head>
+		<title>The Progressing Journey of Adi Singh</title>
 
-  </head>
+		<meta charset="utf-8" />
+		<meta name="description" content="A parallax scrolling experiment using jQuery" />
 
-  <body>
+		<link rel="stylesheet" media="all" href="css/main.css" />
 
-    <header>
-      <h4><p>Aspiring web developer. Biomedical Engineer. Brazilian Jiu Jitsu Blue Belt.</p></h4>
-    </header>
+		<script src="js/modernizr.custom.37797.js"></script>
+		<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')</script>
+		<script src="js/parallax.js"></script>
+	</head>
 
+	<body>
 
-    <body>
-    <img src='adi.jpg'>
+		<div id="wrapper">
 
-        <section>
-          <article>
+			<header id="branding">
+				<h1>The Progressing Journey of Adi Singh</h1>
+			</header>
 
-            <h3> Projects </h3>
+			<nav id="primary">
+				<ul>
+					<li>
+						<h1>Adi Singh</h1>
+						<a class="manned-flight" href="#manned-flight">View</a>
+					</li>
+					<li>
+						<h1>That List of Things I Can Exagerate and Excacerbate aka My Resume</h1>
+						<a class="frameless-parachute" href="#frameless-parachute">View</a>
+					</li>
+					<li>
+						<h1>My Work</h1>
+						<a class="english-channel" href="#english-channel">View</a>
+					</li>
+				<!-- 	<li>
+						<h1>My Story..</h1>
+						<a class="about" href="#about">View</a>
+					</li> -->
+				</ul>
+			</nav>
 
-            <h3> My Story </h3>
-              <p>
-                Having studied at Rutgers University, I graduated with a BS in Biomedical Engineering. I have taken classes in biomedical devices, global health, and have run a gauntlet of math and science courses. Overall, the experience challenged me and gave me he ability to manifest my thought patterns in a logical and optimized form. </p>
+			<div id="content">
+				<article id="manned-flight">
+					<header>
+						<h1>Adi Singh</h1>
+					</header>
+					<h2 id="glimpse_header"> A quick glimpse...</h2>
+					<p>A baby entered out of his mother's womb with a look of fervor and determination. This baby was a stout 9 pounds, with every iota of his body feeling the electricity of the moment. This moment in most people would be efervescent, a fleeting sensation that peaks and dissapates. This energy inside of this baby, that feeling of joy, awe, wonder is what encapsulates the man in the 'h1' header above. That's Adi in a nutshell, and if you want to know more...then well, explore a bit. Peace.</p>
+					<nav class="next-prev">
+						<hr />
+						<a class="next frameless-parachute" href="#frameless-parachute">Next</a>
+					</nav>
+				</article>
 
-                <p>In a short span of time, I have transitioned from a Biomedical Engineer to a aspiring web developer, gaining skills in Ruby, Rails, Javascript, Postgres(SQL), HTML/CSS in the mean time. </p>
+				<article id="frameless-parachute">
+					<header>
+						<h1>The Resume</h1>
+					</header>
+					<p>It's pretty interesting. I only graduated a year ago. I earned a Biomedical Engineering degree, something I had chased since high school, but in senior year I had my mind set on something else. I want to build things. As crass as it sounds, I want to put my name on something and have the satifcation of having gotten out what I put in. So I knew what I had to do. I put my nose to the grindstone and got to work. After school, I worked as an Inspector at the Battery Maritime Building post-Sandy. It was a hard time having to manage myself and learn the intricacies of the counterweight drawbridge system. I did so with the image of pursuing Web Development in the forefront of my mind. I showed up a fish out of water at Web Dev Immersive, but I've really made strides at improving. I've came a long ways in short while, but I've just gotten started. Check out my resume for the nitty gritty. </p>
+					<h3><a href= "https://dl.dropboxusercontent.com/u/20446999/AdiSinghResume2013.pdf">Enjoy Reading my Resume...With New Skills That I Am Truly Proud of</a></h3>
+					<nav class="next-prev">
+						<a class="prev manned-flight" href="#manned-flight">Prev</a>
+						<hr />
+						<a class="next english-channel" href="#english-channel">Next</a>
+					</nav>
+				</article>
 
-            </article>
+				<article id="english-channel">
+					<header>
+						<h1 id="ProjectsTitle">My Projects</h1>
+					</header>
+				<!-- 	<p>On January 7, 1785, Jean Pierre Blanchard and Dr. John Jeffries made the first flight over the English Channel, traveling from Dover to France. During the crossing the balloon lost altitude, so they began tossing everything in the gondola they possibly could, even their clothes. About two hours after take off, they crossed the French coast clad only in their underwear.</p> -->
+					<nav class="next-prev">
+						<a class="prev frameless-parachute" href="#frameless-parachute">Prev</a>
+						<hr />
+					<!-- 	<a class="next about" href="#about">Next</a> -->
+					</nav>
+				</article>
 
-            <h3> Education </h3>
-              <p>Rutgers University – College of Engineering, Honors Program, New Brunswick, NJ<p>
-                  <p>  B.S. in Biomedical Engineering, May 2012</p>
-                       <ul>Classes include:
-                        <li>Honors Calculus 5 </li>
-                        <li>Honors Physics and Laboratory</li>
-                      </ul>
-                  </p>
+				<!-- <article id="about"> -->
+				<!-- 	<header>
+						<h1>About</h1>
+					</header>
+					<p>This is a jQuery parallax scrolling experiment by Jonathan Nicol. <a href="http://f6design.com/journal/2011/08/06/build-a-parallel-scrolling-website-interface-with-jquery-and-css/">Read about it</a> on my blog.</p>
+					<nav class="next-prev">
+						<a class="prev english-channel" href="#english-channel">Prev</a>
+						<hr />
+					</nav> -->
+			<!-- 	</article> -->
+			</div>
 
+			<!-- Parallax foreground -->
+			<div id="parallax-bg3">
+				<img id="bg3-1" src="img/Adi.jpeg" width="529" height="557" alt="Montgolfier hot air balloon"/>
+				<img id="bg3-2" src="http://biomedical.rutgers.edu/images/intro/statue_2.jpg" width="603" height="583" alt="Frameless parachute"/>
+				<img id="bg3-3" src="img/balloon3.png" width="446" height="713" alt="Blanchard's air balloon"/>
+<!-- 				<img id="bg3-4" src="img/ground.png" width="1104" height="684" alt="Landscape with trees and cows"/> -->
+			</div>
 
+			<!-- Parallax  midground clouds -->
+			<div id="parallax-bg2">
+				<div id="planet1"><img id="bg2-1" src="img/cloud-lg1.png" alt="cloud"/></div>
+				<img id="bg2-2" src="img/cloud-lg1.png" alt="cloud"/>
+				<img id="bg2-3" src="img/cloud-lg1.png" alt="cloud"/>
+				<img id="bg2-4" src="img/cloud-lg1.png" alt="cloud"/>
+				<img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/>
+			</div>
 
-      </section>
+			<!-- Parallax  background clouds -->
+			<div id="parallax-bg1">
+	<!-- 			<img id="bg1-1" src="img/cloud-lg2.png" alt="cloud"/>
+				<img id="bg1-2" src="img/cloud-lg2.png" alt="cloud"/>
+				<img id="bg1-3" src="img/cloud-lg2.png" alt="cloud"/>
+				<img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/> -->
+			</div>
 
-        <script src="http://code.jquery.com/jquery.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+		</div>
 
-
-    </body>
-
-        <footer> (c) 2013 Adi Singh ya'll </footer>
-  <body>
-
+	</body>
 
 </html>
-
