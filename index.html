@@ -12,9 +12,11 @@
 
 		<script src="js/modernizr.custom.37797.js"></script>
 		<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-		<script>!window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script>
 		<script src="js/parallax.js"></script>
+		<link rel="stylesheet" href="nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+		<script src="nivo-slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 	</head>
 
 	<body>
@@ -77,6 +79,20 @@
 						<h1 id="ProjectsTitle">My Projects</h1>
 					</header>
 				<!-- 	<p>On January 7, 1785, Jean Pierre Blanchard and Dr. John Jeffries made the first flight over the English Channel, traveling from Dover to France. During the crossing the balloon lost altitude, so they began tossing everything in the gondola they possibly could, even their clothes. About two hours after take off, they crossed the French coast clad only in their underwear.</p> -->
+					<div class="slider-wrapper">
+					  <div id="slider" class="nivoSlider">
+					      <img class="nivo_pic" src="img/adi_gasm.jpg" alt="" />
+					      <a href="http://dev7studios.com"><img class="nivo_pic" src="img/Eargasm.png" alt="" title="#htmlcaption" /></a>
+					      <img src="img/Gosling.png" class="nivo_pic" alt="" title="This is an example of a caption" />
+					     <!--  <img src="img/ground.png" alt="" /> -->
+					  </div>
+					</div>
+
+					<div id="htmlcaption" class="nivo-html-caption">
+					     <a href="http://youtu.be/Sg0epVZ7vrU" class="caption">Check out the Presentation</a>. <a href="https://github.com/NomisNYC/Eargasm" class="caption"> And the Code, of course. </a>
+					</div>
+
+
 					<nav class="next-prev">
 						<a class="prev frameless-parachute" href="#frameless-parachute">Prev</a>
 						<hr />
@@ -100,7 +116,17 @@
 			<div id="parallax-bg3">
 				<img id="bg3-1" src="img/Adi.jpeg" width="529" height="557" alt="Montgolfier hot air balloon"/>
 				<img id="bg3-2" src="http://biomedical.rutgers.edu/images/intro/statue_2.jpg" width="603" height="583" alt="Frameless parachute"/>
-				<img id="bg3-3" src="img/balloon3.png" width="446" height="713" alt="Blanchard's air balloon"/>
+				<div id="bg3-3"  width="446" height=auto alt="Blanchard's air balloon">
+
+					<strong>Eargasm</strong> is an app I presented in front of the first NYC rails meetup at GA. Think of a friend circle that recommends each other music with information from Echnoest for music info and SongKickr for concert recommondations geocoded at your fingertips. That's Eargasm.
+					<br>
+					<br>
+					<strong>The Gos</strong> is the ultimate homage to Ryan Gosling. Summoning the power of Twilio, you can send your own "Hey Girl" texts, and even receive a message courtesy of the man himself. Additionally, you can keep tabs on Ryan with the updating newsfeed or watch clips at your leisure via the youtube api.
+					<br>
+					<br>
+					<strong>Mellowgasm</strong> is a vision I had since before this class: the ability to navigate across  nightlife based on WHO enters. We used the foursquare API to track down images of a given venue's frequent visitors. Did I mention this isn't exclusive to manhattan? Yeah, we also have an algorithm that factors in foursquare rating, checkins, and the girl-guy ratio.
+				</div>
+
 <!-- 				<img id="bg3-4" src="img/ground.png" width="1104" height="684" alt="Landscape with trees and cows"/> -->
 			</div>
 
@@ -122,6 +148,14 @@
 			</div>
 
 		</div>
+
+
+			<script type="text/javascript">
+$(window).load(function() {
+    $('#slider').nivoSlider();
+});
+</script>
+
 
 	</body>
 
