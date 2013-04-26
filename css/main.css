@@ -374,3 +374,12 @@ p{
 .caption{
 	color: red;
 }
+
+p.resume{
+	max-width: 450px;
+}
+
+.nivo_pic img{
+	width: 600px;
+	height: 450px;
+}
