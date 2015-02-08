@@ -1,170 +1,68 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-	<head>
-		<title>The Progressing Journey of Adi Singh</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-		<meta charset="utf-8" />
-		<meta name="description" content="A parallax scrolling experiment using jQuery" />
+    <title>AdiSingh blog ya&#39;ll by adi89</title>
+  </head>
 
-		<link rel="stylesheet" media="all" href="css/main.css" />
+  <body>
 
-		<script src="js/modernizr.custom.37797.js"></script>
-		<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script>!window.jQuery && document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script>
-		<script src="js/parallax.js"></script>
-		<link rel="stylesheet" href="nivo-slider/nivo-slider.css" type="text/css" media="screen" />
-		<script src="nivo-slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
-	</head>
+    <header>
+      <div class="container">
+        <h1>AdiSingh blog ya&#39;ll</h1>
+        <h2></h2>
 
-	<body>
+        <section id="downloads">
+          <a href="https://github.com/adi89" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-		<div id="wrapper">
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="adisingh" class="anchor" href="#adisingh" aria-hidden="true"><span class="octicon octicon-link"></span></a>AdiSingh</h1>
 
-			<header id="branding">
-				<h1>The Progressing Journey of Adi Singh</h1>
-			</header>
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-			<nav id="primary">
-				<ul>
-					<li>
-						<h1>Adi Singh</h1>
-						<a class="manned-flight" href="#manned-flight">View</a>
-					</li>
-					<li>
-						<h1>That List of Things I Can Exagerate and Excacerbate aka My Resume</h1>
-						<a class="frameless-parachute" href="#frameless-parachute">View</a>
-					</li>
-					<li>
-						<h1>My Work</h1>
-						<a class="english-channel" href="#english-channel">View</a>
-					</li>
-				<!-- 	<li>
-						<h1>My Story..</h1>
-						<a class="about" href="#about">View</a>
-					</li> -->
-				</ul>
-			</nav>
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-			<div id="content">
-				<article id="manned-flight">
-					<header>
-						<h1>Adi Singh</h1>
-					</header>
-					<h2 id="glimpse_header"> A quick glimpse...</h2>
-					<p>What's up. Thanks for checking out my portfolio. I'm a 24 year old with a passion for music, art, and tech. I recently finished General Assembly's Web Dev Immersive Program (WDI), which was a pretty hardcore coding experience. I'm talking about 13-15 hours on a reg :P. I really value these skills I've began to develop, and I know that it'll be a foundation for even more awesome things in the future. If you want to know more...then well, explore a bit. Peace.</p>
-					<nav class="next-prev">
-						<hr />
-						<a class="next frameless-parachute" href="#frameless-parachute">Next</a>
-					</nav>
-				</article>
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
 
-				<article id="frameless-parachute">
-					<header>
-						<h1>The Resume</h1>
-					</header>
-					<p class="resume">It's pretty interesting. I only graduated a year ago. I earned a Biomedical Engineering degree, something I had chased since high school, but in senior year I had my mind set on something else. I want to build things. As crass as it sounds, I want to put my name on something and have the satifcation of having gotten out what I put in. So I knew what I had to do. I put my nose to the grindstone and got to work. After school, I worked as an Inspector at the Battery Maritime Building post-Sandy. It was a hard time having to manage myself and learn the intricacies of the counterweight drawbridge system. I did so with the image of pursuing Web Development in the forefront of my mind. I showed up a fish out of water at Web Dev Immersive, but I've really made strides at improving. I've came a long ways in short while, but I've just gotten started. Check out my resume for the nitty gritty. </p>
-					<h3><a href= "https://dl.dropboxusercontent.com/u/20446999/AdiSinghResume2013.pdf">Adi's Resume...</a></h3>
-					<nav class="next-prev">
-						<a class="prev manned-flight" href="#manned-flight">Prev</a>
-						<hr />
-						<a class="next english-channel" href="#english-channel">Next</a>
-					</nav>
-				</article>
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-				<article id="english-channel">
-					<header>
-						<h1 id="ProjectsTitle">My Projects</h1>
-					</header>
-				<!-- 	<p>On January 7, 1785, Jean Pierre Blanchard and Dr. John Jeffries made the first flight over the English Channel, traveling from Dover to France. During the crossing the balloon lost altitude, so they began tossing everything in the gondola they possibly could, even their clothes. About two hours after take off, they crossed the French coast clad only in their underwear.</p> -->
-					<div class="slider-wrapper">
-					  <div id="slider" class="nivoSlider">
-					      <img class="nivo_pic" src="img/adi_gasm.jpg" alt="" title="#htmlcaption3" />
-					      <a href="http://dev7studios.com"><img class="nivo_pic" src="img/Eargasm.png" alt="" title="#htmlcaption" /></a>
-					      <img src="img/Gosling.png" class="nivo_pic" alt="" title="#htmlcaption2" />
-					     <!--  <img src="img/.png" class="nivo_pic" alt="" title="#htmlcaption4" /> -->
-					     <!--  <img src="img/ground.png" alt="" /> -->
-					  </div>
-					</div>
+<h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-					<div id="htmlcaption" class="nivo-html-caption">
-					     <a href="http://youtu.be/Sg0epVZ7vrU" class="caption">Check out the Presentation</a>. <a href="https://github.com/NomisNYC/Eargasm" class="caption"> And the Code, of course. </a>
-					</div>
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-					<div id="htmlcaption2" class="nivo-html-caption">
-					     <a href="https://github.com/alexfogg/gosling" class="caption"> And the Code, of course. </a>
-					</div>
+<h3>
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-					<div id="htmlcaption3" class="nivo-html-caption">
-					     <a href="https://github.com/adi89/mellowgasm" class="caption">the Code.</a>
-					</div>
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-					<nav class="next-prev">
-						<a class="prev frameless-parachute" href="#frameless-parachute">Prev</a>
-						<hr />
-					<!-- 	<a class="next about" href="#about">Next</a> -->
-					</nav>
-				</article>
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-				<!-- <article id="about"> -->
-				<!-- 	<header>
-						<h1>About</h1>
-					</header>
-					<p>This is a jQuery parallax scrolling experiment by Jonathan Nicol. <a href="http://f6design.com/journal/2011/08/06/build-a-parallel-scrolling-website-interface-with-jquery-and-css/">Read about it</a> on my blog.</p>
-					<nav class="next-prev">
-						<a class="prev english-channel" href="#english-channel">Prev</a>
-						<hr />
-					</nav> -->
-			<!-- 	</article> -->
-			</div>
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
-			<!-- Parallax foreground -->
-			<div id="parallax-bg3">
-				<img id="bg3-1" src="img/Adi.jpeg" width="529" height="557" alt="Montgolfier hot air balloon"/>
-				<img id="bg3-2" src="http://biomedical.rutgers.edu/images/intro/statue_2.jpg" width="603" height="583" alt="Frameless parachute"/>
-				<div id="bg3-3"  width="446" height=auto alt="Blanchard's air balloon">
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-					<strong>Eargasm</strong> is an app I presented in front of the first NYC rails meetup at GA. Think of a friend circle that recommends each other music using data from Echnoest for music info and SongKickr for concert recommendations geocoded at your fingertips. That's Eargasm for ya.
-					<br>
-					<br>
-					<strong>The Gos</strong> is the ultimate homage to Ryan Gosling. Summoning the power of Twilio, you can send your own "Hey Girl" texts, and even receive a message courtesy of the man himself. Additionally, you can keep tabs on Ryan with the updating newsfeed or watch clips at your leisure via the youtube api. <a href="http://ancient-ridge-8008.herokuapp.com/">Check out the app, functional and deployed.</a>
-					<br>
-					<br>
-					<strong>Mellowgasm</strong> is a vision I had since before this class: the ability to navigate across  nightlife based on WHO enters. We used the foursquare API to track down images of a given venue's frequent visitors. Did I mention this isn't exclusive to manhattan? Yeah, we also have an algorithm that factors in foursquare rating, checkins, and the girl-guy ratio.
-				</div>
+<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
 
-<!-- 				<img id="bg3-4" src="img/ground.png" width="1104" height="684" alt="Landscape with trees and cows"/> -->
-			</div>
-
-			<!-- Parallax  midground clouds -->
-			<div id="parallax-bg2">
-				<div id="planet1"><img id="bg2-1" src="img/cloud-lg1.png" alt="cloud"/></div>
-				<img id="bg2-2" src="img/cloud-lg1.png" alt="cloud"/>
-				<img id="bg2-3" src="img/cloud-lg1.png" alt="cloud"/>
-				<img id="bg2-4" src="img/cloud-lg1.png" alt="cloud"/>
-				<img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/>
-			</div>
-
-			<!-- Parallax  background clouds -->
-			<div id="parallax-bg1">
-	<!-- 			<img id="bg1-1" src="img/cloud-lg2.png" alt="cloud"/>
-				<img id="bg1-2" src="img/cloud-lg2.png" alt="cloud"/>
-				<img id="bg1-3" src="img/cloud-lg2.png" alt="cloud"/>
-				<img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/> -->
-			</div>
-
-		</div>
-
-
-			<script type="text/javascript">
-$(window).load(function() {
-    $('#slider').nivoSlider();
-});
-</script>
-
-
-	</body>
-
+    
+  </body>
 </html>
