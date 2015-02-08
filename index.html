@@ -1,45 +1,106 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="AdiSingh blog ya&#39;ll : ">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <title>AdiSingh blog ya&#39;ll</title>
+    <title>AdiSingh blog ya&#39;ll by adi89</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/adi89">View on GitHub</a>
+    <header>
+      <div class="container">
+        <h1>AdiSingh blog ya&#39;ll</h1>
+        <h2></h2>
 
-          <h1 id="project_title">AdiSingh blog ya&#39;ll</h1>
-          <h2 id="project_tagline"></h2>
+        <section id="downloads">
+          <a href="https://github.com/adi89" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-        </header>
-    </div>
+    <div class="container">
+      <section id="main_content">
+        <h2>
+<a id="datalocking-in-rails" class="anchor" href="#datalocking-in-rails" aria-hidden="true"><span class="octicon octicon-link"></span></a>Datalocking in Rails</h2>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="adisingh" class="anchor" href="#adisingh" aria-hidden="true"><span class="octicon octicon-link"></span></a>AdiSingh</h1>
+<p>I've been going over Rails 4 guide by Obie Fernandez, and I'm really trying to bring to light things that I've overlooked with ActiveRecord. I frequently have my go-to's, but I really want a thorough understanding of everything there is to offer. </p>
+
+<p>A cool concept I learned today through this book as well as <a href="https://www.youtube.com/watch?v=bGRsGUKs28o">this video</a> was the concept of Data locking.</p>
+
+<p>So let's get into it..</p>
+
+<p><strong>What is Datalocking?</strong></p>
+
+<p>Datalocking is a term to describe techniques that prevent multiple concurrent users of an app from updating + overwriting a record. Matt accesses the venue page and wants to change a detail. Sean does the same. And it's 9:45pm. Say Matt updates the page before Sean. Datalocking will prevent Sean from overwriting the venue page. </p>
+
+<p>There's two types of Datalocking supported by ActiveRecord: optimistic and pessimistic. </p>
+
+<h3>
+<a id="look-on-the-bright-side" class="anchor" href="#look-on-the-bright-side" aria-hidden="true"><span class="octicon octicon-link"></span></a>Look on the bright side</h3>
+
+<p>Optimistic Loading  resolve collision <em>if</em> they occur. What I mean by that is that the locking mechanism is occuring provided something triggers it.</p>
+
+<pre><code>class AddLockVersionToVenues &lt; ActiveRecord::Migration
+ def change
+  add_column :venues, :lock_version, :integer, default:0
+ end
+
+end
+</code></pre>
+
+<p>You add the lock version column to the table you want optimistic loading on. Think of the <em>lock_version</em> property of the version of the record you have. Each time you update the Bada-Bing (Sopranos reference ahem) record, the lock_version will increment.</p>
+
+<p>Back to our favorite buffoons. So let's say two concurrent users loaded up that record. Each of them are on the edit page and want to make an update. But John made it first, the <em>lock_version</em> will increment. Now the record has been updated in the database, with a +1 <em>lock_version</em> </p>
+
+<p>But then where does that leave Sean ? He's clinging onto a Stale object. If he tries to update the <em>Bada Bing</em> , then a ActiveRecord::StaleObjectError shall be raised. </p>
+
+<p>The way to deal with this when using optimistic loading is to have a rescue statement in the controller. </p>
+
+<p>A couple things to note here:</p>
+
+<ul>
+<li>very little modification has to be made to implement this feature</li>
+<li>update operation is slower since <em>lock_version</em> has to be checked. </li>
+<li>like above, it sucks for the user who spent time inputting all this crap to realize that the Bing was modified by  Mike and Sean was making changes. </li>
+</ul>
+
+<h3>
+<a id="glass-half-empty" class="anchor" href="#glass-half-empty" aria-hidden="true"><span class="octicon octicon-link"></span></a>Glass half empty</h3>
+
+<p>Or is it?  You don't have to modify your table at all. Here, you're taking advantage of the Database's built-in locking and transaction mechanisms.</p>
+
+<p>Transactions exist so you can sync up multiple database operations in a single 'all or nothing' operation. Whatever is within the transaction block is not visible to the outside, and ALL the changes take effect at the completion of the block. </p>
+
+<p>Jacking this example from railsguides:</p>
+
+<pre><code>Account.transaction do
+ # select * from accounts where name = 'shugo' limit 1 for update
+ shugo = Account.where("name = 'shugo'").lock(true).first
+ yuko = Account.where("name = 'yuko'").lock(true).first
+ shugo.balance -= 100
+ shugo.save!
+ yuko.balance += 100
+ yuko.save!
+end
+</code></pre>
+
+<p>What anime did they find these names? Anyway, the rows returned by the SQL query (in this case a AR method that's distilled down to it's corresponding query) will be locked. Upon completion of the transaction, the locked state of the record will end. </p>
+
+<p>To note</p>
+
+<ul>
+<li>super easy to implement</li>
+<li>keep transactions small to avoid extended processing time that where one rails process waiting on another. (rails processes often single threaded)</li>
+</ul>
       </section>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
     
-
   </body>
 </html>
